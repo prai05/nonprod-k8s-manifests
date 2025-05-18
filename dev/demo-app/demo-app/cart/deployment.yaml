@@ -1,19 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: demo-app
+  creationTimestamp: null
+  labels:
+    app: cart
+  name: cart
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: demo-app
+      app: cart
+  strategy: {}
   template:
     metadata:
+      creationTimestamp: null
       labels:
-        app: demo-app
+        app: cart
     spec:
       containers:
       - image: nginx
         name: nginx
-        ports:
-        - containerPort: 8080
+        resources: {}
+status: {}

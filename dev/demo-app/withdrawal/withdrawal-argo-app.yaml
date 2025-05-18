@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: withdrawal-argo-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: git@github.com:prai05/nonprod-k8s-manifests.git  
+    targetRevision: develop  
+    path: dev/demo-app/withdrawal
+    
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: withdrawal-argo-app

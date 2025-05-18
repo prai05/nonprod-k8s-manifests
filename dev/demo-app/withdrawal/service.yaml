@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: demo-app
+  name: simple-deploy
 spec:
   ports:
   - port: 8080
     protocol: TCP
     targetPort: 80
   selector:
-    app: demo-app
+    app: simple-deploy
